@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Last Tea Shop</title>
+    <!-- FAVICON LINK -->
     <link rel="icon" href="favicon.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- UPDATED FONT IMPORT (Added Lato) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* UPDATED STYLES */
         body {
-            font-family: 'Merriweather', 'Georgia', 'Times New Roman', Times, serif;
-            background-color: #fdfcf5;
-            color: #1a1a1a;
+            font-family: 'Lato', 'Inter', 'Helvetica Neue', 'Arial', sans-serif; /* New body font */
+            background-color: #FBF9F1; /* New calm beige */
+            color: #3d352f; /* New dark brown text */
         }
         h1, h2, h3 {
             font-family: 'Merriweather', serif;
             font-weight: 900;
             text-transform: uppercase;
-            border-bottom: 2px solid #1a1a1a;
+            border-bottom: 2px solid #3d352f; /* New dark brown */
             padding-bottom: 4px;
             margin-bottom: 12px;
             letter-spacing: 1px;
+            color: #3d352f;
         }
         h1 {
             font-size: 3.5rem;
@@ -40,6 +44,14 @@
             border-bottom-width: 1px;
             margin-top: 20px;
         }
+        h4 {
+            font-family: 'Merriweather', serif; /* Keep serif for recipe names */
+            font-weight: 700; /* Bold */
+            margin-top: 16px;
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+            color: #3d352f;
+        }
         p, li {
             line-height: 1.7;
             margin-bottom: 16px;
@@ -50,14 +62,14 @@
         }
         li::before {
             content: "•";
-            color: #1a1a1a;
+            color: #3d352f; /* New dark brown */
             display: inline-block;
             width: 1em;
             margin-left: 0;
         }
         hr {
             border: none;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid #3d352f; /* New dark brown */
             margin: 24px 0;
         }
         /* Newspaper column layout for rules */
@@ -78,13 +90,13 @@
             font-size: 0.9rem;
         }
         th, td {
-            border: 1px solid #1a1a1a;
+            border: 1px solid #3d352f; /* New dark brown */
             padding: 8px;
             text-align: left;
             vertical-align: top;
         }
         th {
-            background-color: #eeebe2;
+            background-color: #EFEBE4; /* Lighter beige for header */
             font-weight: 700;
         }
         /* Form styles */
@@ -97,16 +109,16 @@
         .form-input, .form-textarea {
             width: 100%;
             padding: 8px;
-            border: 1px solid #1a1a1a;
+            border: 1px solid #3d352f; /* New dark brown */
             background-color: #fff;
-            font-family: 'Merriweather', serif;
+            font-family: 'Lato', serif; /* Use body font */
             font-size: 0.9rem;
             border-radius: 0;
             transition: box-shadow 0.2s;
         }
         .form-input:focus, .form-textarea:focus {
             outline: none;
-            box-shadow: 0 0 0 2px #1a1a1a;
+            box-shadow: 0 0 0 2px #3d352f; /* New dark brown */
         }
         .form-textarea {
             min-height: 150px;
@@ -114,15 +126,15 @@
         }
         /* Dice Roller */
         .dice-roller {
-            border: 2px solid #1a1a1a;
+            border: 2px solid #3d352f; /* New dark brown */
             padding: 16px;
             text-align: center;
             background-color: #fff;
             margin-bottom: 24px;
         }
         .dice-btn {
-            background-color: #1a1a1a;
-            color: #fdfcf5;
+            background-color: #3d352f; /* New dark brown */
+            color: #FBF9F1; /* New calm beige */
             font-family: 'Merriweather', serif;
             font-weight: 700;
             padding: 10px 20px;
@@ -135,33 +147,36 @@
             width: 100%;
         }
         .dice-btn:hover {
-            background-color: #4a4a4a;
+            background-color: #63554e; /* Lighter brown for hover */
         }
         .dice-result {
             font-size: 3rem;
             font-weight: 900;
             margin-top: 12px;
             min-height: 50px;
-            color: #1a1a1a;
+            color: #3d352f; /* New dark brown */
         }
     </style>
 </head>
 <body class="p-4 md:p-8">
 
-    <div class="max-w-7xl mx-auto p-4 md:p-8 border-t-4 border-b-4 border-black">
+    <!-- UPDATED BORDER COLOR -->
+    <div class="max-w-7xl mx-auto p-4 md:p-8 border-t-4 border-b-4 border-[#3d352f]">
         <header class="mb-8">
+            <!-- REMOVED PLACEHOLDER IMAGES -->
             <div class="flex justify-center items-center mb-4">
-                <img src="https://placehold.co/100x100/fdfcf5/1a1a1a?text=Teapot&font=merriweather" alt="A sketch of a teapot" class="mr-4">
                 <h1>Last Tea Shop</h1>
-                <img src="https://placehold.co/100x100/fdfcf5/1a1a1a?text=Teacup&font=merriweather" alt="A sketch of a teacup" class="ml-4">
             </div>
-            <p class="text-center text-lg italic border-y-2 border-black py-2">You run a tea shop on the border of the living and the dead. The recently deceased visit for one last hot drink, before their long journey to the Great Beyond.</p>
+            <!-- UPDATED BORDER COLOR -->
+            <p class="text-center text-lg italic border-y-2 border-[#3d352f] py-2">You run a tea shop on the border of the living and the dead. The recently deceased visit for one last hot drink, before their long journey to the Great Beyond.</p>
         </header>
 
         <div class="md:grid md:grid-cols-3 md:gap-8">
             
+            <!-- Column 1: Interactive Sheet & Dice -->
             <aside class="md:col-span-1 mb-8 md:mb-0">
                 
+                <!-- Dice Roller -->
                 <div class="dice-roller sticky top-4">
                     <h3>Dice Roller</h3>
                     <button id="dice-btn" class="dice-btn">Roll 1d6</button>
@@ -172,6 +187,7 @@
 
                 <hr>
 
+                <!-- Character Sheet -->
                 <h2>Stall Sheet</h2>
                 <p class="italic">"Neither here nor there"</p>
                 <form id="character-sheet" class="space-y-4">
@@ -198,7 +214,9 @@
                 </form>
             </aside>
 
-            <main class="md:col-span-2 border-l-2 border-r-2 border-black px-6">
+            <!-- Column 2: Rules -->
+            <!-- UPDATED BORDER COLOR -->
+            <main class="md:col-span-2 border-l-2 border-r-2 border-[#3d352f] px-6">
                 <div class="newspaper-columns">
                     <p>Time is strange here. Days and memories blur. Nobody visited yesterday you are sure of that. Someone passed last week, but you are unable to picture their face.</p>
                     <p>The fog thins. A figure approaches. You stoke the fire.</p>
@@ -219,35 +237,40 @@
                     <p>Choose (or invent) two affinities: luck, incense, frogs, secrets, shadows, dust, moonlight, ghosts, cards, memories, mice, lost objects, dreams, mist.</p>
                     <p>Describe your stall on the stall sheet. How are your affinities part of this place?</p>
 
+                    <!-- UPDATED PLAY OVERVIEW LIST -->
                     <h2>PLAY OVERVIEW</h2>
                     <ul>
-                        <li>Roll for how many DAYS have passed since last visitor. Consult VISITORS table to see who arrives</li>
-                        <li>Roll and consult WEATHER table for atmosphere and the visitor's emotional state</li>
-                        <li>Prepare tea. Ask first question.</li>
-                        <li>Serve tea. Second question with tea effects.</li>
-                        <li>Repeat until Veiled One departs</li>
+                        <li><strong>Roll for how many DAYS have passed since last visitor. Consult VISITORS table to see who arrives</strong></li>
+                        <li><strong>Roll and consult WEATHER table for atmosphere and the visitor's emotional state</strong></li>
+                        <li><strong>Prepare tea. Ask first question.</strong></li>
+                        <li><strong>Serve tea. Second question with tea effects.</strong></li>
+                        <li><strong>Repeat until Veiled One departs</strong></li>
                     </ul>
 
+                    <!-- UPDATED FIRST DAY PARAGRAPHS -->
                     <h2>THE FIRST DAY</h2>
                     <p>Prepare real world tea for yourself. Settle in.</p>
-                    <p>Roll 2d6 separately against SUPPLIES. The first die points to the row; the second provides the column. Record this on your stall sheet. Repeat until you have three tea supplies.</p>
-                    <p>Roll 1d6 and note the result in the DAYS section of your stall sheet. Find that number on VISITORS. This is your first visitor.</p>
-                    <p>Roll 1d6 and consult WEATHER. This gives today's atmospheric conditions and the visitor's emotional state.</p>
-                    <p>Consult RECIPES and prepare a tea you have one of the supplies for. Remove one measure of the ingredient from your character sheet.</p>
-                    <p>As you prepare tea, there is a time to ask a question. Use QUESTION PROMPTS or make up your own. In the journal section of your character sheet, write an evocative response to each question. Consider their emotional state.</p>
-                    <p>Serve tea. Ask a second question as the visitor drinks. This time take tea effects into account when the visitor provides their answers.</p>
-                    <p>When the tea is finished, bid your visitor farewell. Describe the visitor's state upon leaving the stall. Note any special gift or bonus they pass on.</p>
+                    <p>Roll 2d6 separately against SUPPLIES. The first die points to the row; the second provides the column. <strong>Record this on your stall sheet.</strong> Repeat until you have <strong>three tea supplies.</strong></p>
+                    <p>Roll 1d6 and note the result in the DAYS section of your stall sheet. Find that number on VISITORS. <strong>This is your first visitor.</strong></p>
+                    <p>Roll 1d6 and consult WEATHER. This gives <strong>today's atmospheric conditions and the visitor's emotional state.</strong></p>
+                    <p>Consult RECIPES and prepare a tea you have one of the supplies for. <strong>Remove one measure of the ingredient from your character sheet.</strong></p>
+                    <p>As you prepare tea, there is a time to <strong>ask a question.</strong> Use QUESTION PROMPTS or make up your own. In the journal section of your character sheet, <strong>write an evocative response</strong> to each question. <strong>Consider their emotional state.</strong></p>
+                    <p>Serve tea. <strong>Ask a second question</strong> as the visitor drinks. This time <strong>take tea effects into account</strong> when the visitor provides their answers.</p>
+                    <p>When the tea is finished, bid your visitor farewell. Describe the visitor's state upon leaving the stall. <strong>Note any special gift or bonus they pass on.</strong></p>
 
+                    <!-- UPDATED SUBSEQUENT DAYS PARAGRAPH -->
                     <h2>SUBSEQUENT DAYS</h2>
                     <p>Roll 1d6 and add the result to your DAYS total. Consult VISITORS to learn who arrives. Proceed as first day, but with the following addition.</p>
-                    <p>At some point ask each visitor, "How did you know my last customer?" If the moment seems right, weave an affinity into the situation. Describe how it transforms or eases things.</p>
+                    <p>At some point ask each visitor, <strong>"How did you know my last customer?"</strong> If the moment seems right, <strong>weave an affinity</strong> into the situation. Describe how it transforms or eases things.</p>
                     
+                    <!-- UPDATED ENDING A GAME PARAGRAPH -->
                     <h2>ENDING A GAME</h2>
-                    <p>When DAYS reaches 24 or greater, Veiled One arrives. Follow the question ritual. As Veiled One departs, ask the final question. What happens next?</p>
+                    <p>When DAYS reaches 24 or greater, Veiled One arrives. Follow the question ritual. As Veiled One departs, <strong>ask the final question. What happens next?</strong></p>
                 </div>
 
                 <hr>
 
+                <!-- Tables -->
                 <div class="md:grid md:grid-cols-2 md:gap-6">
                     <div>
                         <h3>WEATHER</h3>
@@ -380,51 +403,116 @@
                             </tr>
                             <tr>
                                 <td>22. Princess ◎</td>
-                                C- <td>23. Emperor *</td>
+                                <td>23. Emperor *</td>
                                 <td>24. Veiled One</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p class="text-sm italic">* Gifts a random tea ingredient. Roll on SUPPLIES</p>
-                    <p class="text-sm italic">◎ Roll 2d6 next WEATHER. Use higher result</p>
-                    <p class="text-sm italic">† Add 2 to result of next DAYS roll</p>
+                    <!-- UPDATED VISITOR NOTES -->
+                    <p classs="text-sm italic"><strong>*</strong> Gifts a random tea ingredient. Roll on SUPPLIES</p>
+                    <p class="text-sm italic"><strong>◎</strong> Roll 2d6 next WEATHER. Use higher result</p>
+                    <p class="text-sm italic"><strong>†</strong> Add 2 to result of next DAYS roll</p>
                 </div>
 
                 <hr>
 
+                <!-- UPDATED Recipes & Prompts -->
                 <div class="md:grid md:grid-cols-2 md:gap-6">
+                    
+                    <!-- RECIPES CONVERTED TO TABLE -->
                     <div>
                         <h3>RECIPES</h3>
-                        
-                        <h4>Gumboot Tea</h4>
-                        <p>Warms the soul<br>No special ingredient required. Brew anytime</p>
-
-                        <h4>Tea of Mirth</h4>
-                        <p>An hour spent laughing at everything and nothing<br>Bright gumdrop, cloud dew or reindeer lichen</p>
-
-                        <h4>Draft of Recall</h4>
-                        <p>Relive a memory in vivid detail<br>Quartz crystal, ginkgo leaf or ancient seashell</p>
-                        
-                        <h4>Comforting Brew</h4>
-                        <p>Creates a safe space. Eases what ails you<br>Dried sage, sea salt or feather moss</p>
-
-                        <h4>Distance Tea</h4>
-                        <p>Drink to calm a difficult memory<br>Kawakawa leaf, giant puffball or bird nest fungi</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tea</th>
+                                    <th>Effect</th>
+                                    <th>Ingredients</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Gumboot Tea</strong></td>
+                                    <td>Warms the soul</td>
+                                    <td>No special ingredient required. Brew anytime</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tea of Mirth</strong></td>
+                                    <td>An hour spent laughing at everything and nothing</td>
+                                    <td>Bright gumdrop, cloud dew or reindeer lichen</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Draft of Recall</strong></td>
+                                    <td>Relive a memory in vivid detail</td>
+                                    <td>Quartz crystal, ginkgo leaf or ancient seashell</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Comforting Brew</strong></td>
+                                    <td>Creates a safe space. Eases what ails you</td>
+                                    <td>Dried sage, sea salt or feather moss</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Distance Tea</strong></td>
+                                    <td>Drink to calm a difficult memory</td>
+                                    <td>Kawakawa leaf, giant puffball or bird nest fungi</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    
+                    <!-- QUESTION PROMPTS CONVERTED TO TABLE -->
                     <div>
                         <h3>QUESTION PROMPTS</h3>
-                        <ul>
-                            <li>1. What is the last thing you remember?</li>
-                            <li>2. Where did you live?</li>
-                            <li>3. What are proud of? (or What do you regret?)</li>
-                            <li>4. Who will miss you?</li>
-                            <li>5. You saw something unusual. What did you see?</li>
-                            <li>6. You lost something valuable. What happened?</li>
-                            <li>7. You left something unfinished. What is undone?</li>
-                            <li>8. You hid something? What did you hide?</li>
-                            <li>9. You recently realised something. What was it?</li>
-                            <li>10. Tell me about your journey to the tea shop.</li>
-                        </ul>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>d10</th>
+                                    <th>Prompt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td>What is the last thing you remember?</td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>Where did you live?</td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>What are proud of? (or What do you regret?)</td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td>Who will miss you?</td>
+                                </tr>
+                                <tr>
+                                    <td>5.</td>
+                                    <td>You saw something unusual. What did you see?</td>
+                                </tr>
+                                <tr>
+                                    <td>6.</td>
+                                    <td>You lost something valuable. What happened?</td>
+                                </tr>
+                                <tr>
+                                    <td>7.</td>
+                                    <td>You left something unfinished. What is undone?</td>
+                                </tr>
+                                <tr>
+                                    <td>8.</td>
+                                    <td>You hid something? What did you hide?</td>
+                                </tr>
+                                <tr>
+                                    <td>9.</td>
+                                    <td>You recently realised something. What was it?</td>
+                                </tr>
+                                <tr>
+                                    <td>10.</td>
+                                    <td>Tell me about your journey to the tea shop.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -451,7 +539,7 @@
                 diceResult2d6.textContent = `Row: ${roll1}, Col: ${roll2}`;
             });
 
-            // --- ADDED: Local Storage Save & Load Logic ---
+            // --- Local Storage Save & Load Logic ---
 
             // 1. Identify all fields to be saved
             const saveableFields = [

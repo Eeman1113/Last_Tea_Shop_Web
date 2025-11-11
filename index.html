@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Last Tea Shop</title>
+    <link rel="icon" href="favicon.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,10 +160,8 @@
 
         <div class="md:grid md:grid-cols-3 md:gap-8">
             
-            <!-- Column 1: Interactive Sheet & Dice -->
             <aside class="md:col-span-1 mb-8 md:mb-0">
                 
-                <!-- Dice Roller -->
                 <div class="dice-roller sticky top-4">
                     <h3>Dice Roller</h3>
                     <button id="dice-btn" class="dice-btn">Roll 1d6</button>
@@ -173,7 +172,6 @@
 
                 <hr>
 
-                <!-- Character Sheet -->
                 <h2>Stall Sheet</h2>
                 <p class="italic">"Neither here nor there"</p>
                 <form id="character-sheet" class="space-y-4">
@@ -200,7 +198,6 @@
                 </form>
             </aside>
 
-            <!-- Column 2: Rules -->
             <main class="md:col-span-2 border-l-2 border-r-2 border-black px-6">
                 <div class="newspaper-columns">
                     <p>Time is strange here. Days and memories blur. Nobody visited yesterday you are sure of that. Someone passed last week, but you are unable to picture their face.</p>
@@ -251,7 +248,6 @@
 
                 <hr>
 
-                <!-- Tables -->
                 <div class="md:grid md:grid-cols-2 md:gap-6">
                     <div>
                         <h3>WEATHER</h3>
@@ -384,7 +380,7 @@
                             </tr>
                             <tr>
                                 <td>22. Princess ◎</td>
-                                <td>23. Emperor *</td>
+                                C- <td>23. Emperor *</td>
                                 <td>24. Veiled One</td>
                             </tr>
                         </tbody>
@@ -396,7 +392,6 @@
 
                 <hr>
 
-                <!-- Recipes & Prompts -->
                 <div class="md:grid md:grid-cols-2 md:gap-6">
                     <div>
                         <h3>RECIPES</h3>
@@ -439,6 +434,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Dice Roller Logic ---
             const diceBtn = document.getElementById('dice-btn');
             const diceResult = document.getElementById('dice-result');
             const diceBtn2d6 = document.getElementById('dice-btn-2d6');
@@ -454,6 +450,37 @@
                 const roll2 = Math.floor(Math.random() * 6) + 1;
                 diceResult2d6.textContent = `Row: ${roll1}, Col: ${roll2}`;
             });
+
+            // --- ADDED: Local Storage Save & Load Logic ---
+
+            // 1. Identify all fields to be saved
+            const saveableFields = [
+                document.getElementById('shop-name'),
+                document.getElementById('description'),
+                document.getElementById('days'),
+                document.getElementById('tea-supplies'),
+                document.getElementById('journal')
+            ];
+
+            // 2. Load data when the page loads
+            saveableFields.forEach(field => {
+                if(field) { // Check if field exists
+                    const savedValue = localStorage.getItem(field.id);
+                    if (savedValue !== null) { // Check for null, as empty string is valid
+                        field.value = savedValue;
+                    }
+                }
+            });
+
+            // 3. Save data on any input change
+            saveableFields.forEach(field => {
+                if(field) {
+                    field.addEventListener('input', (event) => {
+                        localStorage.setItem(event.target.id, event.target.value);
+                    });
+                }
+            });
+
         });
     </script>
 </body>
